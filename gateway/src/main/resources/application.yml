@@ -12,14 +12,14 @@ eureka:
   instance:
     hostname: localhost
 
+# Actuator configuration
 management:
   endpoints:
     web:
       exposure:
-        include: health,info
-  health:
-    consul:
-      enabled: true
+        include: "*"  # Expose tous les endpoints Actuator
   endpoint:
     health:
       show-details: always
+    metrics:
+      enabled: true
